@@ -1,3 +1,5 @@
+require 'open-uri'
+
 def word_counter(sentence,dictionnary)
   word_hash = Hash.new
   for dico_word in dictionnary
@@ -19,3 +21,11 @@ def count_occurence (sentence,word)
     return count_occurence(sentence[index_first_letter+1..-1],word)
   end
 end
+
+def shakespeare_word_counter
+  shakespeare_text_corpus = URI.open("https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt").read
+  dictionnary = ["the"]
+  return word_counter(shakespeare_text_corpus,dictionnary)
+end
+
+puts shakespeare_word_counter
