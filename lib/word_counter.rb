@@ -24,8 +24,11 @@ end
 
 def shakespeare_word_counter
   shakespeare_text_corpus = URI.open("https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt").read
-  dictionnary = ["the"]
-  return word_counter(shakespeare_text_corpus,dictionnary)
+  dictionnary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
+  return word_counter(shakespeare_text_corpus[0..100000],dictionnary)
+  
 end
 
-puts shakespeare_word_counter
+#puts shakespeare_word_counter
+
+puts "dsfhelloewdhello".include? "hello"

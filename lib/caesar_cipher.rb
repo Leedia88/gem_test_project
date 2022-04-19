@@ -2,7 +2,7 @@
 
 def cipher(str, num=0)
     letters = str.chars
-
+    num = key_tuner(num)
     letters.map! do |letter|
         case letter
         when /[a-z]/
@@ -14,6 +14,10 @@ def cipher(str, num=0)
         end
     end
     return letters.join
+end
+
+def key_tuner(num)
+    return num - 26 * (num/26)
 end
 
 
