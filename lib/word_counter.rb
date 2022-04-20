@@ -28,7 +28,3 @@ def shakespeare_word_counter
   return word_counter(shakespeare_text_corpus[0..100000],dictionnary)
   
 end
-
-#puts shakespeare_word_counter
-
-puts "dsfhelloewdhello".include? "hello"
